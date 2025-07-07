@@ -1,18 +1,26 @@
-## Getting Started
+# Repositório de Exercícios Java - POO
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este repositório contém uma série de exercícios práticos de Programação Orientada a Objetos (POO) em Java, cada um com um menu interativo para operações específicas.
 
-## Folder Structure
+## Exercícios Disponíveis
 
-The workspace contains two folders by default, where:
+1. **Conta Bancária**
+   Simula operações bancárias como saque, depósito e uso de cheque especial.
+   *Diretório:* `ex1/`
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+2. *(Próximos exercícios serão adicionados aqui)*
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Facilitadores Utils
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- **`MenuUtil`**
+  Classe reutilizável para criação de menus interativos via CLI.
+  *Funcionalidades:*
+  - Adição dinâmica de opções.
+  - Validação de entrada.
+  - Loop até a saída.
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- **`TerminalUtil`**
+  Utilitário para controle do terminal.
+  *Métodos:*
+  - `limparTerminal()`: Limpa a tela (cross-platform).
+  - `pausar()`: Pausa a execução até pressionar Enter.
