@@ -53,8 +53,6 @@ public class Carro {
         }
     }
 
-    }
-
     // Operação de freiar :check:
     public void diminuirVelocidade() {
         if (ligado == true) {
