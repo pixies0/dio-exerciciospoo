@@ -40,16 +40,16 @@ public class Carro {
         }
 
         if (marcha == 0) {
-            System.out.println("Não pode acelerar em ponto morto!");
+            System.out.println("Não pode acelerar em ponto morto! Aumente a marcha primeiro.");
             return;
         }
 
         if (velocidade < LIMITES_MARCHA[marcha]) {
-            velocidade++;
+            velocidade+= 7.5; // Aumenta a velocidade em 7.5 km/h pq meu carro acelera + rápido.
             System.out.println("Acelerando. Velocidade atual: " + velocidade + "km/h");
         } else {
             System.out.println("Velocidade máxima para " + marcha +
-                    "ª marcha atingida (" + LIMITES_MARCHA[marcha] + "km/h)");
+                             "ª marcha atingida (" + LIMITES_MARCHA[marcha] + "km/h)");
         }
     }
 
@@ -123,15 +123,17 @@ public class Carro {
         if (marcha < 6) {
             int novaMarcha = marcha + 1;
 
-            if (velocidade >= LIMITES_MARCHA[novaMarcha - 1] + 1 &&
-                    velocidade <= LIMITES_MARCHA[novaMarcha]) {
+            // Permite engatar a 1ª marcha mesmo parado
+            if (novaMarcha == 1 ||
+                (velocidade >= LIMITES_MARCHA[novaMarcha - 1] + 1 &&
+                 velocidade <= LIMITES_MARCHA[novaMarcha])) {
                 marcha = novaMarcha;
                 System.out.println("Marcha aumentada para: " + marcha + "ª");
             } else {
                 System.out.println("Velocidade " + velocidade + "km/h não compatível com " +
-                        (novaMarcha) + "ª marcha (" +
-                        (LIMITES_MARCHA[novaMarcha - 1] + 1) + "-" +
-                        LIMITES_MARCHA[novaMarcha] + "km/h)");
+                                 novaMarcha + "ª marcha (" +
+                                 (LIMITES_MARCHA[novaMarcha - 1] + 1) + "-" +
+                                 LIMITES_MARCHA[novaMarcha] + "km/h)");
             }
         } else {
             System.out.println("Já está na 6ª marcha!");
