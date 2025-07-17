@@ -1,7 +1,5 @@
 package ex7;
 
 public interface ServicoMensagem {
-    void enviarMensagem(String mensagem);
+    void enviarMensagem(String mensagem) throws EnvioException;
 }
-
-
